@@ -9,5 +9,13 @@ public class Main {
 				.sorted()
 				.toList();
 		System.out.println(filtered);
+		System.out.println("Top 2: " + getTopN(nums, 2));
 		}
+		public static List<Integer> getTopN(List<Integer> nums, int n) {
+    	return nums.stream()
+            .sorted((a, b) -> b - a)   // sort descending
+            .limit(n)
+            .toList();
+	}
+
 }
